@@ -38,7 +38,7 @@ const Form1 = ({nextStep, prevStep}:{
 
   const skillsArray = ["JavaScript", "Python", "Java", "C++", "React"];
   
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormValues({
       ...formValues,
@@ -46,17 +46,17 @@ const Form1 = ({nextStep, prevStep}:{
     });
   };
 
-  const handleMultiSelect = (e) => {
+  const handleMultiSelect = (e: any) => {
     const value = e.target.value;
     setFormValues({
       ...formValues,
       skills: formValues.skills.includes(value)
-        ? formValues.skills.filter((skill) => skill !== value)
+        ? formValues.skills.filter((skill: any) => skill !== value)
         : [...formValues.skills, value],
     });
   };
 
-  const submittedForm1 = (e:any) => {
+  const submittedForm1 = (e: any) => {
     e.preventDefault()
 
     nextStep()
@@ -69,7 +69,7 @@ const Form1 = ({nextStep, prevStep}:{
         style={{ display: "block", marginBottom: "10px", fontSize: "18px" }}
         htmlFor="mediumText"
       >
-        Medium Text:
+        Job Title:
       </label>
       <input
         style={commonStyles}

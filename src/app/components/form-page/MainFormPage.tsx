@@ -8,12 +8,10 @@ function MainFormPage() {
   const [step, setStep] = useState(1);
   const [fileText, setFileText] = useState('');
 
-  // Define a function to handle moving to the next step
   const nextStep = () => {
     setStep(step + 1);
   };
 
-  // Define a function to handle moving to the previous step if needed
   const prevStep = () => {
     setStep(step - 1);
   };
@@ -26,8 +24,7 @@ function MainFormPage() {
         <div>
             {step === 1 && <Form1 nextStep={nextStep} prevStep={prevStep} />}
             {step === 2 && <Form2 nextStep={nextStep} prevStep={prevStep} setFileText={setFileText}/>}
-            {step === 3 && <Form3 nextStep={nextStep} prevStep={prevStep} />}
-
+            {step === 3 && <Form3 />}
         </div>
     </FormProvider>
 

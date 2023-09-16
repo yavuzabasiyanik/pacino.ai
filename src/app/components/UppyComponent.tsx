@@ -8,8 +8,9 @@ import * as pdfjsLib from 'pdfjs-dist';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = '//cdnjs.cloudflare.com/ajax/libs/pdf.js/3.10.111/pdf.worker.min.js';  // <-- add this line
 
-const UppyComponent = ({setFileText}:{
+const UppyComponent = ({setFileText, nextStep}:{
   setFileText: any
+  nextStep: any
 }) => {
 
   useEffect(() => {
@@ -44,6 +45,7 @@ const UppyComponent = ({setFileText}:{
           });
     
           if (data) {
+           nextStep()
            setFileText(await getItems(data))
           }
         }

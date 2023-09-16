@@ -6,7 +6,6 @@ const Form2 = ({nextStep, prevStep, setFileText}:{
     prevStep: any
     setFileText: any
 }) => {
-    const [formValues, setFormValues] = useFormContext()
 
     return (
         <div className="rounded-lg bg-white p-5 text-left shadow-xl">
@@ -20,7 +19,7 @@ const Form2 = ({nextStep, prevStep, setFileText}:{
           </div>
           <div className="mt-4">
             {/* Make sure UppyComponent is imported correctly */}
-            <UppyComponent setFileText={setFileText} />
+            <UppyComponent setFileText={setFileText} nextStep={nextStep}/>
           </div>
         </div>
       </div>
