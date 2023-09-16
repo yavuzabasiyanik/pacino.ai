@@ -1,9 +1,10 @@
+import MainFormPage from '@/app/components/form-page/MainFormPage';
 import React from 'react';
 
 const ContinueRecruiting = () => {
   return (
-    <div>
-      {/* Your content for the "Continue Recruiting" page goes here */}
+    <div style={{width:"100%", height:"100vh", display:"flex", justifyContent: "center", alignItems: "center"}}>
+      <MainFormPage/>
     </div>
   );
 };
