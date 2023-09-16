@@ -13,7 +13,7 @@ Pacino AI is an innovative platform that's poised to redefine the recruiting pro
 
 ## Getting Started
 To get started with Pacino AI, follow these simple steps to understand how the platform works and how you can benefit from it.
-- 
+
 ## Prerequisites
 Before you begin, ensure you have the following:
 
