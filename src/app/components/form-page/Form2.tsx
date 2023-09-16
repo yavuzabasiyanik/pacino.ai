@@ -1,9 +1,10 @@
 import UppyComponent from "../UppyComponent"
 import { useFormContext } from "./FormContext"
 
-const Form2 = ({nextStep, prevStep}:{
+const Form2 = ({nextStep, prevStep, setFileText}:{
     nextStep: any
     prevStep: any
+    setFileText: any
 }) => {
     const [formValues, setFormValues] = useFormContext()
 
@@ -19,7 +20,7 @@ const Form2 = ({nextStep, prevStep}:{
           </div>
           <div className="mt-4">
             {/* Make sure UppyComponent is imported correctly */}
-            <UppyComponent />
+            <UppyComponent setFileText={setFileText} />
           </div>
         </div>
       </div>

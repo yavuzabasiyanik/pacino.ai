@@ -6,6 +6,7 @@ import { FormProvider } from './FormContext';
 
 function MainFormPage() {
   const [step, setStep] = useState(1);
+  const [fileText, setFileText] = useState('');
 
   // Define a function to handle moving to the next step
   const nextStep = () => {
@@ -17,11 +18,14 @@ function MainFormPage() {
     setStep(step - 1);
   };
 
+  console.log(fileText);
+  
+
   return (
     <FormProvider>
         <div>
             {step === 1 && <Form1 nextStep={nextStep} prevStep={prevStep} />}
-            {step === 2 && <Form2 nextStep={nextStep} prevStep={prevStep} />}
+            {step === 2 && <Form2 nextStep={nextStep} prevStep={prevStep} setFileText={setFileText}/>}
             {step === 3 && <Form3 nextStep={nextStep} prevStep={prevStep} />}
 
         </div>

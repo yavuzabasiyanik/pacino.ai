@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Uppy from '@uppy/core';
 import Dashboard from '@uppy/dashboard';
 import Compressor from '@uppy/compressor';
@@ -6,9 +6,12 @@ import '@uppy/core/dist/style.css';
 import '@uppy/dashboard/dist/style.css';
 import * as pdfjsLib from 'pdfjs-dist';
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = '//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js';  // <-- add this line
+pdfjsLib.GlobalWorkerOptions.workerSrc = '//cdnjs.cloudflare.com/ajax/libs/pdf.js/3.10.111/pdf.worker.min.js';  // <-- add this line
 
-const UppyComponent = () => {
+const UppyComponent = ({setFileText}:{
+  setFileText: any
+}) => {
+
   useEffect(() => {
     const uppy = new Uppy({
       allowMultipleUploads: true,
@@ -27,27 +30,28 @@ const UppyComponent = () => {
     .use(Compressor);
 
     uppy.on('file-added', async (file) => {
-      console.log('Added file', file);
-
       try {
         if (file.type === 'application/pdf') {
-          const arrayBuffer = await file.data.arrayBuffer();
-          const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-          let fullText = '';
-
-          for (let i = 1; i <= pdf.numPages; i++) {
-            const page = await pdf.getPage(i);
-            const content = await page.getTextContent();
-            const text = content.items.map((item) => 'str' in item ? item.str : '').join(' ');
-            fullText += `${text}\n`;
+          const data = await new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+              resolve(event.target?.result);
+            };
+            reader.onerror = function(event) {
+              reject(new Error(`File reading failed: ${event}`));
+            };
+            reader.readAsArrayBuffer(file.data);
+          });
+    
+          if (data) {
+           setFileText(await getItems(data))
           }
-
-          console.log('Extracted Text:', fullText);
         }
       } catch (err) {
         console.error("An error occurred while processing the PDF:", err);
       }
     });
+    
 
     return () => uppy.close();
   }, []);
@@ -59,4 +63,16 @@ const UppyComponent = () => {
   );
 };
 
+async function getContent(src:any){
+  const doc = await pdfjsLib.getDocument(src).promise
+  const page = await doc.getPage(1)
+  return await page.getTextContent()
+}
+
+async function getItems(src:any){
+  const content = await getContent(src)
+  const strValues = content.items.map((item: any) => item?.str)
+  const bigText = strValues.join(' ')
+  return bigText
+}
 export default UppyComponent;
