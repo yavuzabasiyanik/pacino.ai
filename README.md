@@ -27,6 +27,7 @@ For Job Seekers
 1. Upload Resume: After logging in, go to your dashboard and upload your resume.
 2. Search Jobs: Browse through the list of available jobs.
 3. Check Compatibility: Click on any job to see your compatibility score.
+
 For Employers
 1. Create Job Description: Log in and go to your dashboard to create a new job description.
 2. View Applicants: Check out the list of applicants and their respective compatibility scores.
