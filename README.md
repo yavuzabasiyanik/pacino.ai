@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pacino AI
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Getting Started](#getting-started)
+3. [Prerequisites](#prerequisites)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Contributors](#contributors)
+7. [License](#license)
+
+## Introduction
+Pacino AI is an innovative platform that's poised to redefine the recruiting process for both job seekers and employers. Our platform employs advanced generative AI to instantly correlate resumes with job descriptions, delivering an immediate compatibility score. This initial analysis not only saves time but also offers insights into the fit between a candidate's background and a job role, all without the use of traditional recruiting process.
 
 ## Getting Started
+To get started with Pacino AI, follow these simple steps to understand how the platform works and how you can benefit from it.
 
-First, run the development server:
+## Prerequisites
+Before you begin, ensure you have the following:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- A modern web browser (e.g., Chrome, Firefox)
+- PDF or DOCX format for resumes and job descriptions
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
+No installation is necessary. Pacino AI is a web-based platform. Simply navigate to our website and start using the service.
+## Usage
+For Job Seekers
+1. Upload Resume: After logging in, go to your dashboard and upload your resume.
+2. Search Jobs: Browse through the list of available jobs.
+3. Check Compatibility: Click on any job to see your compatibility score.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For Employers
+1. Create Job Description: Log in and go to your dashboard to create a new job description.
+2. View Applicants: Check out the list of applicants and their respective compatibility scores.
+3. Contact Candidate: Use the platform to directly contact candidates with high compatibility scores.
+## Contributors
+- [Yavuz Abasiyanik](https://github.com/yavuzabasiyanik)
+- [Ahmed Abasiyanik](https://github.com/aabasiyanik)
+- [Hamdi Akin](https://github.com/hakin2)
+- [Yusuf Sevkli](https://github.com/fsevkli)
+## License
+MIT License
