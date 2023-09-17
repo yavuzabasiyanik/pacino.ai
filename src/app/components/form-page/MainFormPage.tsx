@@ -7,6 +7,8 @@ import { FormProvider } from './FormContext';
 function MainFormPage() {
   const [step, setStep] = useState(1);
   const [fileText, setFileText] = useState('');
+  const [jobTitle, setJobTitle] = useState('');
+  const [jobDescription, setJobDescription] = useState('')
 
   const nextStep = () => {
     setStep(step + 1);
@@ -15,16 +17,14 @@ function MainFormPage() {
   const prevStep = () => {
     setStep(step - 1);
   };
-
-  console.log(fileText);
   
 
   return (
     <FormProvider>
         <div>
-            {step === 1 && <Form1 nextStep={nextStep} prevStep={prevStep} />}
+            {step === 1 && <Form1  jobTitle={jobTitle} jobDescription={jobDescription} setJobTitle={setJobTitle} setJobDescription={setJobDescription} nextStep={nextStep} prevStep={prevStep} />}
             {step === 2 && <Form2 nextStep={nextStep} prevStep={prevStep} setFileText={setFileText}/>}
-            {step === 3 && <Form3 jobApplicantData={undefined} />}
+            {step === 3 && <Form3 resume={fileText} jobTitle={jobTitle} jobDescription={jobDescription}/>}
         </div>
     </FormProvider>
 

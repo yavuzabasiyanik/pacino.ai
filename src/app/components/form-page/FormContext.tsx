@@ -4,11 +4,11 @@ const FormContext = createContext(null);
 
 export const useFormContext = () => useContext(FormContext);
 
-export const FormProvider = ({ children }) => {
+export const FormProvider = ({ children }:{
+  children: any
+}) => {
   const [formValues, setFormValues] = useState({
     mediumText: '',
-    select1: '',
-    select2: '',
     description: '',
     skills: [],
   });

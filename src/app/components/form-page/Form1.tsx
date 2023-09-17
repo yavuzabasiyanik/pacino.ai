@@ -30,21 +30,18 @@ const commonStyles = {
   };
 
 
-const Form1 = ({nextStep, prevStep}:{
+const Form1 = ({ jobTitle, jobDescription, setJobTitle, setJobDescription, nextStep, prevStep}:{
+    jobTitle: any,
+   jobDescription: any,
+    setJobTitle: any, 
+    setJobDescription: any
     nextStep: any
     prevStep: any
 }) => {
   const [formValues, setFormValues] = useFormContext()
 
-  const skillsArray = ["JavaScript", "Python", "Java", "C++", "React"];
   
-  const handleChange = (e: any) => {
-    const { name, value } = e.target;
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
-  };
+  const skillsArray = ["JavaScript", "Python", "Java", "C++", "React"];
 
   const handleMultiSelect = (e: any) => {
     const value = e.target.value;
@@ -76,41 +73,9 @@ const Form1 = ({nextStep, prevStep}:{
         type="text"
         id="mediumText"
         name="mediumText"
-        value={formValues.mediumText}
-        onChange={handleChange}
+        value={jobTitle}
+        onChange={(e) => setJobTitle(e.target.value)}
       />
-
-      <label style={labelStyle} htmlFor="select1">
-        Workplace Type
-      </label>
-      <select
-        style={inputStyle}
-        name="select1"
-        id="select1"
-        onChange={handleChange}
-      >
-        <option value="">--Workplace Type--</option>
-        <option value="On-Site">On-Site</option>
-        <option value="Hybrid">Hybrid</option>
-        <option value="Remote">Remote</option>
-      </select>
-
-      <label style={labelStyle} htmlFor="select2">
-        Job Type
-      </label>
-      <select
-        style={inputStyle}
-        name="select2"
-        id="select2"
-        onChange={handleChange}
-      >
-        <option value="">--Job Type--</option>
-        <option value="option1">Full-time</option>
-        <option value="option2">Part-Time</option>
-        <option value="option2">Contract</option>
-        <option value="option2">Temporary</option>
-        <option value="option2">Intership</option>
-      </select>
 
       <label
         style={{ display: "block", marginBottom: "10px", fontSize: "18px" }}
@@ -124,8 +89,8 @@ const Form1 = ({nextStep, prevStep}:{
         name="description"
         rows="4"
         cols="50"
-        value={formValues.description}
-        onChange={handleChange}
+        value={jobDescription}
+        onChange={(e) => setJobDescription(e.target.value)}
       ></textarea>
 
       <label style={labelStyle} htmlFor="skills">
