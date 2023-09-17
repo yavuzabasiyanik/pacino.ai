@@ -145,7 +145,7 @@ const Form1 = ({nextStep, prevStep}:{
       ))}
 
       <div style={{display:"flex", justifyContent:"flex-end", marginTop:"20px"}}>
-        <button onClick={submittedForm1} type="submit">Submit</button>
+        <button onClick={submittedForm1} type="submit">Next</button>
       </div>
     </div>
   );

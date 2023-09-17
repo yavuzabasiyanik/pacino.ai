@@ -1,6 +1,6 @@
 import { use, useEffect, useState } from "react";
 import { GetServerSideProps } from "next";
-
+import '../../globals.css'
 interface pages {
   name: string;
   href: string;

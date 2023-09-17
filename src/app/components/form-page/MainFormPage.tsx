@@ -24,7 +24,7 @@ function MainFormPage() {
         <div>
             {step === 1 && <Form1 nextStep={nextStep} prevStep={prevStep} />}
             {step === 2 && <Form2 nextStep={nextStep} prevStep={prevStep} setFileText={setFileText}/>}
-            {step === 3 && <Form3 />}
+            {step === 3 && <Form3 jobApplicantData={undefined} />}
         </div>
     </FormProvider>
 
