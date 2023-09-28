@@ -6,7 +6,7 @@ const Home = () => {
     <div className="flex h-screen justify-center items-center">
       <Link href="/learn-more">
         <button
-          style={{ width: "230px", height: "230px" }}
+          style={{ width: "240px", height: "240px" }}
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg mr-9"
         >
           Learn More
@@ -14,7 +14,7 @@ const Home = () => {
       </Link>
       <Link href="/continue-recruiting">
         <button
-          style={{ width: "230px", height: "230px" }}
+          style={{ width: "240px", height: "240px" }}
           className="bg-green-500 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg"
         >
           Continue Recruiting
